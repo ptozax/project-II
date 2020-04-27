@@ -6,30 +6,16 @@ var index_coutry;
 
 
 function select_ct(sl_coutry) {
-
-document.cookie=sl_coutry;
-	
-
-
-
-	window.location.href = 'country.html';
 	
 	
+	
+index_coutry=sl_coutry;
 
 
-
+$( "body" ).load( "country.html" );
 
 
 }
-
-
-
-
-
-
-
-
-
 
 
 
@@ -217,11 +203,11 @@ document.cookie=sl_coutry;
 	$.getJSON('https://corona.lmao.ninja/v2/countries?sort=country', function (data) {
         console.log(document.cookie);
 		w_data2 = data;
-		 $("#country_name").append("<strong> ผู้ติดเชื้อใน " + w_data2[document.cookie].country + "</strong>");
-		 $("#Confirmed_ct").append("<strong>" + w_data2[document.cookie].cases + "</strong>");
-		$("#Hospitalized_ct").append("<strong>" + w_data2[document.cookie].active + "</strong>");
-		 $("#Recovered_ct").append("<strong>" + w_data2[document.cookie].recovered+ "</strong>");
-		 $("#Deaths_ct").append("<strong>" + w_data2[document.cookie].deaths + "</strong>");
+		 $("#country_name").append("<strong> ผู้ติดเชื้อใน " + w_data2[index_coutry].country + "</strong>");
+		 $("#Confirmed_ct").append("<strong>" + w_data2[index_coutry].cases + "</strong>");
+		$("#Hospitalized_ct").append("<strong>" + w_data2[index_coutry].active + "</strong>");
+		 $("#Recovered_ct").append("<strong>" + w_data2[index_coutry].recovered+ "</strong>");
+		 $("#Deaths_ct").append("<strong>" + w_data2[index_coutry].deaths + "</strong>");
 		 
 		
 	
@@ -233,7 +219,6 @@ document.cookie=sl_coutry;
 
 
 	
-
 
 
 
