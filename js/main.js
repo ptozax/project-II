@@ -215,13 +215,18 @@ document.cookie=sl_coutry;
 	var w_data2;
 
 	$.getJSON('https://corona.lmao.ninja/v2/countries?sort=country', function (data) {
-
+        console.log(document.cookie);
 		w_data2 = data;
-		$("#country_name").append("<strong> ผู้ติดเชื้อใน " + w_data2[document.cookie].country + "</strong>");
-		$("#Confirmed_ct").append("<strong>" + w_data2[document.cookie].cases + "</strong>");
+		 $("#country_name").append("<strong> ผู้ติดเชื้อใน " + w_data2[document.cookie].country + "</strong>");
+		 $("#Confirmed_ct").append("<strong>" + w_data2[document.cookie].cases + "</strong>");
 		$("#Hospitalized_ct").append("<strong>" + w_data2[document.cookie].active + "</strong>");
-		$("#Recovered_ct").append("<strong>" + w_data2[document.cookie].recovered+ "</strong>");
-		$("#Deaths_ct").append("<strong>" + w_data2[document.cookie].deaths + "</strong>");
+		 $("#Recovered_ct").append("<strong>" + w_data2[document.cookie].recovered+ "</strong>");
+		 $("#Deaths_ct").append("<strong>" + w_data2[document.cookie].deaths + "</strong>");
+		 
+		
+	
+
+		
 
 	});
 	
